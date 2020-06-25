@@ -1,7 +1,7 @@
 import datetime
 import numpy
 from geopy import geocoders
-from Functions import *
+from General.Functions import *
 
 
 class Stock(object):

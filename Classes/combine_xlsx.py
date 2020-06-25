@@ -1,7 +1,7 @@
 import pandas as pd
 import glob
 from openpyxl import Workbook
-from Functions import *
+from General.Functions import *
 from openpyxl.utils import get_column_letter
 
 results_folder = "Results"

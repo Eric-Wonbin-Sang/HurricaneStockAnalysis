@@ -2,25 +2,26 @@ import subprocess
 import sys
 import glob
 import dateutil
-from Stock import *
-from Hurricane import *
-from openpyxl import Workbook
 import itertools
-# getting Functions.py from Stocks.py
+
+from Classes.Stock import *
+from Classes.Hurricane import *
+from openpyxl import Workbook
 
 
 def main():
-    wiki_sap_script = "wiki_sap.R"
-    get_hist_stock_prices_script = "get_hist_stock_prices.R"
+
+    wiki_sap_script = "RScripts/wiki_sap.R"
+    get_hist_stock_prices_script = "RScripts/get_hist_stock_prices.R"
     wiki_sap_name = "wiki_sap.txt"
     temp_wiki_sap_name = "temp_" + wiki_sap_name
-    ticker_list_txt_name = "tickers.txt"
+    ticker_list_txt_name = "Data/tickers.txt"
     stock_data_name = "stock_data.xlsx"
-    hurricane_data_folder = "Hurricane Data"
+    hurricane_data_folder = "Data/Hurricane Data"
     results_folder = "Results"
-    rscript_path = "C:/Program Files/R/R-3.5.1/bin/Rscript.exe"
+    rscript_path = "C:/Program Files/R/R-4.0.2/bin/Rscript.exe"
 
-    master_gics_filters = ["Health Care", "Real Estate", "Industrials"] #, "Real Estate", "Industrials", "Energy", "Utilities", "Utilities", "Financials", "Communication Services"
+    master_gics_filters = ["Health Care", "Real Estate", "Industrials"]     # "Real Estate", "Industrials", "Energy", "Utilities", "Utilities", "Financials", "Communication Services"
     master_gics_filters_combinations = []
     for L in range(0, len(master_gics_filters) + 1):
         for subset in itertools.combinations(master_gics_filters, L):

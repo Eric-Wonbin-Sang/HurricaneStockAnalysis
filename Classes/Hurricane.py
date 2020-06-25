@@ -1,4 +1,4 @@
-from Functions import *
+from General.Functions import *
 
 
 class Hurricane(object):
